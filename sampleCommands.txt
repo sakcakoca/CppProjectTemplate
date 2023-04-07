@@ -1,0 +1,7 @@
+Command for ctest: ctest --build-and-test . out --build-generator "Unix Makefiles" --verbose
+Command for cmake: cmake -B out --toolchain out/build/conan_toolchain.cmake -DCMAKE_BUILD_TYPE=DEBUG
+Command for PVS Analyzer: cd out/build/unix-clang-x64-debug
+    pvs-studio-analyzer analyze -f compile_commands.json -l /home/salim/.config/PVS-Studio/PVS-Studio.lic -o pvs-result.log -e test -j2
+    plog-converter -a GA:1,2 -t json -o pvs-result.json pvs-result.log
+	
+Command for changing template project name: python change_project_name.py "." "ProjectTemplate" "YourProjectName"
